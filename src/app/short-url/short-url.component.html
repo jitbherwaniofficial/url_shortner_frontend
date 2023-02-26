@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="container_title">Create Short URL</h2>
+  <form class="container_form">
+    <div class="container_input">
+      <label class="container_input_label" for="longUrl">LONG URL</label>
+      <input
+        class="container_input_bar"
+        type="text"
+        [(ngModel)]="longUrl"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </div>
+    <div>
+      <button class="container_btn" type="button" (click)="createShortUrl()">Create Short URL</button>
+    </div>
+  </form>
+  <div *ngIf="shortUrl" class="container_url_bar">
+    <p class="container_para">Your short URL is:</p>
+    <a class="container_anchor_tag" href="{{ shortUrl }}" target="_blank">{{ shortUrl }}</a>
+  </div>
+</div>
